@@ -3,7 +3,25 @@
 @import '@/assets/scss/variables/colors';
 
 #{$header} {
-
+  position: relative;
+  width: 100%;
+  height: 456px;
+  background: url('/assets/images/portrait.jpg') no-repeat center;
+  background-size: cover;
+  
+  &__logo {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 155px;
+  }
+  
+  &__text {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+    width: 329px;
+  }
 }
 
 @media (max-width: #{$mediaMD}) {
@@ -13,5 +31,18 @@
 
 @media (max-width: #{$mediaSM}) {
   #{$header} {
+    height: 211px;
+    
+    &__logo {
+      top: 12px;
+      right: 12px;
+      width: 60px;
+    }
+    
+    &__text {
+      bottom: 12px;
+      left: 12px;
+      width: 167px;
+    }
   }
 }
