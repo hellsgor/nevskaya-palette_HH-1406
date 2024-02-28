@@ -8,6 +8,15 @@
   padding-right: $content-block-padding-right;
   padding-bottom: $content-block-padding-bottom;
   padding-left: $content-block-padding-left;
+  
+  background-color: $light-background;
+  
+  p {
+    b,
+    strong {
+      text-transform: uppercase;
+    }
+  }
 }
 
 @media (max-width: #{$mediaMD}) {
