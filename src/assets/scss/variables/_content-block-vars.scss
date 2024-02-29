@@ -1,5 +1,9 @@
 @import '@/assets/scss/variables/colors';
 
+@function getHeadingsIndent($headingIndentAccordingLayout) {
+  @return $headingIndentAccordingLayout - $text-indent-top
+}
+
 // content-block
 // desktop
 $content-block-padding-top: 70px;
@@ -29,7 +33,7 @@ $headings-color: $text-black;
 $headings-font-size: 25px;
 $headings-font-weight: 400;
 $headings-line-height: normal;
-$heading-top-indent: 70px;
+$heading-top-indent: getHeadingsIndent(70px); // передать сюда отступ заголовков из макета
 $heading-bottom-indent: 30px;
 // mobile
 $headings-font-size-mobile: 21px;
