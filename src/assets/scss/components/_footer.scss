@@ -2,7 +2,78 @@
 @import '@/assets/scss/variables/classes';
 @import '@/assets/scss/variables/colors';
 
+@function getWidth($inRow, $gap, $multiplier) {
+  @return calc(((100% - (($inRow - 1) * $gap)) / $inRow) * $multiplier)
+}
+
+@mixin item-background($imageURL) {
+  background-image: url($imageURL);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #{$footer} {
+  padding: 0 28px 64px;
+  background-color: $light-background;
+  
+  &__title {
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  
+  &__item {
+    display: flex;
+    width: getWidth(3, 14px, 1);
+    height: 107px;
+    padding: 31px 14px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: $background;
+    
+    p, span {
+      font-size: 12px;
+      line-height: normal;
+    }
+    
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    &_big {
+      width: getWidth(3, 14px, 1.32)
+    }
+    
+    &_small {
+      width: getWidth(3, 14px, 0.68)
+    }
+    
+    &_easel {
+      @include item-background('/assets/images/easel.jpg');
+      background-size: 218px auto;
+    }
+    
+    &_paints {
+      @include item-background('/assets/images/paints.jpg');
+      background-size: 269px auto;
+    }
+    
+    &_brush {
+      @include item-background('/assets/images/brush.jpg');
+      background-size: 226px auto;
+    }
+  }
 }
 
 @media (max-width: #{$mediaMD}) {
@@ -12,5 +83,46 @@
 
 @media (max-width: #{$mediaSM}) {
   #{$footer} {
+    padding: 0 10px 36px;
+    
+    &__title {
+      margin-bottom: 20px;
+      font-size: 21px;
+    }
+    
+    &__wrapper {
+      gap: 6px;
+    }
+    
+    &__item {
+      width: getWidth(2, 6px, 1);
+      padding: 31px 12px;
+      
+      &_mobile-big {
+        width: 100%;
+      }
+      
+      &_mobile-order- {
+        &0 {
+          order: 0;
+        }
+        
+        &1 {
+          order: 1;
+        }
+        
+        &2 {
+          order: 2;
+        }
+        
+        &3 {
+          order: 3;
+        }
+        
+        &4 {
+          order: 4;
+        }
+      }
+    }
   }
 }
