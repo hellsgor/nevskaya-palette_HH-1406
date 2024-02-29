@@ -60,17 +60,17 @@
     }
     
     &_easel {
-      @include item-background('/assets/images/easel.jpg');
+      @include item-background('https://hhcdn.ru/ichameleon/343884.jpg');
       background-size: 218px auto;
     }
     
     &_paints {
-      @include item-background('/assets/images/paints.jpg');
+      @include item-background('https://hhcdn.ru/ichameleon/343886.jpg');
       background-size: 269px auto;
     }
     
     &_brush {
-      @include item-background('/assets/images/brush.jpg');
+      @include item-background('https://hhcdn.ru/ichameleon/343885.jpg');
       background-size: 226px auto;
     }
   }
